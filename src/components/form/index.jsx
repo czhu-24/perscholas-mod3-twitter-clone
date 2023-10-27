@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 
-const Form = ({tweets, setTweets}) => {
+const Form = ({ tweets, setTweets }) => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const [firstName, setFirstName] = useState('');
