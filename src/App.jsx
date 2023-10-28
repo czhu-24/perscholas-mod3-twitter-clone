@@ -5,10 +5,13 @@ import DisplayTweets from './components/display_tweets';
 import axios from 'axios';
 import { Link, Navigate, Route, Routes } from 'react-router-dom';
 import Signup from './pages/Signup';
+import Login from './pages/LogIn';
 
 function App() {
 
   const [tweets, setTweets] = useState([]);
+
+  const [user, setUser] = useState(null);
   
     // useEffect, go and get tweets, then setTweets
     useEffect(() => {
@@ -36,11 +39,13 @@ function App() {
     <nav>
       <Link to="/">Home</Link>
       <Link to="/signup">SignUp</Link>
+      <Link to="/login">LogIn</Link>
     </nav>
     {/* PAGES HERE */}
     <Routes>
       <Route path='/' element={<Home />}/>
       <Route path='/signup' element={<Signup />}/>
+      <Route path='/login' element={<Login setUser={setUser} />}/>
       <Route path='/*' element={<Navigate to="/"/>}/>
     </Routes>
     </>

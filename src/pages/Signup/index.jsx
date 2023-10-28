@@ -19,7 +19,7 @@ const Signup = () => {
       setEmailError(true);
       return;
     } else if (!validator.isStrongPassword(password, { minLength: 8, minNumbers: 1, minSymbols: 1 })) {
-      setPasswordError("Your password is too weak. Your password must contain at least 8 characters with at least one number and one special symbol");
+      setPasswordError("Your password is too weak. Your password must contain at least 8 characters with at least one number and one special symbol and one capitalized letter");
       return;
     } else {
       setPasswordError(false);
